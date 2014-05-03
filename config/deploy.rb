@@ -3,7 +3,7 @@ require 'bundler/capistrano' # for bundler support
 set :application, "d3underground"
 set :repository,  "git@github.com:williamcodes/d3underground.git"
 
-set :user, 'USERNAME'
+set :user, 'william'
 set :deploy_to, "/home/#{ user }/#{ application }"
 set :use_sudo, false
 
