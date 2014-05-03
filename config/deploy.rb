@@ -1,9 +1,13 @@
-load 'deploy/assets'
+# load 'deploy/assets'
 require 'bundler/capistrano' # for bundler support
 
 set :application, "d3underground"
 set :repository,  "git@github.com:williamcodes/d3underground.git"
 set :user, "william"
+set :use_sudo, false
+set :scm, :git
+
+default_run_options[:pty] = true
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
