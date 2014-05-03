@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'mongoid'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
 gem 'capistrano', '2.15.5'
 # WFJ fix to allow capistrano to ssh in, latest version of gem is broken
 gem "net-ssh", "~> 2.7.0"
