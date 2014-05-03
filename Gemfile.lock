@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bson (1.10.0)
     builder (3.2.2)
     capistrano (2.15.5)
       highline
@@ -42,6 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    durran-validatable (2.0.1)
     erubis (2.7.0)
     execjs (2.0.2)
     highline (1.6.21)
@@ -54,11 +56,19 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    leshill-will_paginate (2.3.11)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (5.3.3)
+    mongo (1.10.0)
+      bson (~> 1.10.0)
+    mongoid (1.0.6)
+      activesupport (>= 2.2.2)
+      durran-validatable (>= 2.0.1)
+      leshill-will_paginate (>= 2.3.11)
+      mongo (>= 0.18.2)
     multi_json (1.9.3)
     net-scp (1.2.0)
       net-ssh (>= 2.6.5)
@@ -131,6 +141,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mongoid
   net-ssh (~> 2.7.0)
   rails (= 4.1.0.rc2)
   sass-rails (~> 4.0.2)
