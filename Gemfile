@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
+gem 'capistrano', '2.15.5'
+# WFJ fix to allow capistrano to ssh in, latest version of gem is broken
+gem "net-ssh", "~> 2.7.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0.rc2'
 # Use sqlite3 as the database for Active Record
