@@ -210,5 +210,9 @@ div.ytd, div.current-container {
   float: right;
 }
 div.current {
-width: 130px;
+  width: 130px;
 }
+div#day-slider-container h2, #day-slider-container span {
+  font-size: 30px;
+}
+
