@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="d3.slider.css" />  
+  <!-- <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css"> -->
+  <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"> 
+  <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+
+</head>
+<body class="claro">
+<div id="mapDiv"></div>
+  <div class="wrapper">
+
+    <!-- Map Div -->
+    
+    
+    <div id="test-object"></div>
+
+    <a href="#" onclick="return false;" id="button">Click Here</a>
+
+    <!-- Day Slider Below * Fixed to bottom *-->
+    <div id="day-slider-fixed">
+      <div id="day-slider-container">
+        <h2>Day is <span id="day-text">1</span></h2>
+        <div id="day-slider"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="d3.slider.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="http://js.arcgis.com/3.9/"></script>
+  
+  <script>
+  //Initiate d3 footer slider
+  d3.select('#day-slider').call(d3.slider()
+    .on('slide',function(evt, value){
+      d3.select('#day-text').text(value);
+    }).min(1).max(365)
+  );
+
+  //jQuery color animation
+  $(function() {
+    var state = true;
+    $( "#button" ).click(function() {
+      if ( state ) {
+        $( "#test-object" ).animate({
+          'backgroundColor' : "#990000"
+        }, 1000 );
+      } else {
+        $( "#test-object" ).animate({
+          'backgroundColor' : "#4682B4"}
+        , 1000 );
+      }
+      state = !state;
+    });
+
+  });
+
+  //ESRI Map
+  var map;
+      require([
+        "esri/map", 
+        "esri/InfoTemplate", 
+        "esri/layers/FeatureLayer",
+        "dojo/parser", 
+        "dojo/domReady!"
+      ], function(
+        Map, InfoTemplate, FeatureLayer, 
+        parser
+      ) {
+        parser.parse();
+        
+        map = new Map("mapDiv", { 
+          basemap: "national-geographic",
+          center: [-74.0059, 40.7127],
+          zoom: 10
+        });
+       
+        map.on("load", initOperationalLayer);
+
+        function initOperationalLayer() {
+          var infoTemplate = new InfoTemplate("${state_name}", "Population (2000):  ${pop2000:NumberFormat}");
+          var featureLayer = new FeatureLayer("http://services3.arcgis.com/dOyYPcWNnijHU6RT/ArcGIS/rest/services/new_york_shape/FeatureServer/0",{
+            mode: FeatureLayer.MODE_ONDEMAND,
+            outFields: ["*"],
+            infoTemplate: infoTemplate
+          });
+          
+          map.addLayer(featureLayer);
+          map.infoWindow.resize(155,75);
+        }
+      });
+
+    //RGB Values
+    function setMap(temp) {
+      map.color()
+    }
+
+  </script>
+
+</body>
+</html>
