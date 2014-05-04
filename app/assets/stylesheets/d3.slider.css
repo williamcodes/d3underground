@@ -186,3 +186,29 @@ div.overlay {
   position:relative;
 }
 
+div.ytd-container {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+}
+div.current-container{
+  position: absolute;
+  top: 130px;
+  left: 95px;
+}
+div.ytd, div.current-container {
+  float: left;
+  width: 80px;
+}
+.ytd-container p, .current-container p {
+  float: left;
+  margin: 0;
+}
+.ytd div, .current-container div {
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+div.current {
+width: 130px;
+}
