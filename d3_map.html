@@ -6,10 +6,8 @@
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
      <link rel="stylesheet" href="d3.slider.css" />  
-     <!-- <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css"> -->
      <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"> 
      <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
-
 </head>
 
 <body class="claro">
@@ -19,19 +17,19 @@
                <div id="map-center">
                     <div id="upper-left-container" class="section-container">
                          <div class="input"><input type="text" id="upper-left-input" /></div>
-                         <div id="mapDivUpperLeft" class="map-div"></div>
+                         <div id="mapDivUpperLeft" class="map-div"><div class="overlay"></div></div>
                     </div>
                     <div id="upper-right-container" class="section-container">
                          <div class="input"><input type="text" id="upper-right-input" /></div>
-                         <div id="mapDivUpperRight" class="map-div"></div>
+                         <div id="mapDivUpperRight" class="map-div"><div class="overlay"></div></div>
                     </div>
                     <div id="lower-left-container" class="section-container"> 
                          <div class="input"><input type="text" id="lower-left-input" /></div>
-                         <div id="mapDivLowerLeft" class="map-div"></div>
+                         <div id="mapDivLowerLeft" class="map-div"><div class="overlay"></div></div>
                     </div>
                     <div id="lower-right-container" class="section-container">    
                          <div class="input"><input type="text" id="lower-right-input" /></div>
-                         <div id="mapDivLowerRight" class="map-div"></div>
+                         <div id="mapDivLowerRight" class="map-div"><div class="overlay"></div></div>
                     </div>
                </div>
           </div>
@@ -149,27 +147,11 @@
                }).min(1).max(365)
           );
 
-          div = d3.select(this).classed("d3-slider d3-slider-" + orientation, true);
-          
-          slider.slide_to = function(newValue) {
-               if(newValue > max)
-                    newValue = max;
-               else if(newValue < min)
-                    newValue = min;
-               div.on("click")(newValue);
-               }   
 
           $('#upper-left-input').attr('value','1953');
           $('#upper-right-input').attr('value','1973');
           $('#lower-left-input').attr('value','1993');
           $('#lower-right-input').attr('value','2013');
-
-  <h2>Slider controlled from an external <span id="slider-button"><input type='button' value='button'/></span></h2></h2>
-     
-     var pos = 0;<br>
-     d3.select('#slider-button').on('click', function() { slider.slide_to(++pos); });<br>
-     d3.select('#slider_b').call(slider);</code>
-     <div id="slider_b"></div>    
 
        </script>
 
