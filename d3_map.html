@@ -17,10 +17,14 @@
      <input type="text" id="color" />
 
        <!-- Map Div -->
-       <div id="mapDivUpperLeft" class="map-div"></div>
-       <div id="mapDivUpperRight" class="map-div"></div>
-       <div id="mapDivLowerLeft" class="map-div"></div>
-       <div id="mapDivLowerRight" class="map-div"></div>
+          <div id="map-container">
+               <div id="map-center">
+               <div id="mapDivUpperLeft" class="map-div"></div>
+               <div id="mapDivUpperRight" class="map-div"></div>
+               <div id="mapDivLowerLeft" class="map-div"></div>
+               <div id="mapDivLowerRight" class="map-div"></div>
+               </div>
+          </div>
        
                <div class="wrapper">
 
@@ -95,15 +99,19 @@
                     bounds = webMercatorUtils.geographicToWebMercator(bounds);
                     mapUpperLeft = new Map("mapDivUpperLeft", { 
                          extent: bounds
+                         ,slider: false
                     });
                     mapUpperRight = new Map("mapDivUpperRight", { 
                          extent: bounds
+                         ,slider: false
                     });
                     mapLowerLeft = new Map("mapDivLowerLeft", { 
                          extent: bounds
+                         ,slider: false
                     });
                     mapLowerRight = new Map("mapDivLowerRight", { 
                          extent: bounds
+                         ,slider: false
                     });
 
                     var featureLayerUpperLeft = new FeatureLayer("http://services3.arcgis.com/dOyYPcWNnijHU6RT/ArcGIS/rest/services/new_york_shape/FeatureServer/0")
@@ -115,6 +123,7 @@
                 mapUpperRight.addLayer(featureLayerUpperRight);
                 mapLowerLeft.addLayer(featureLayerLowerLeft);
                 mapLowerRight.addLayer(featureLayerLowerRight);
+
                 
             });
 
