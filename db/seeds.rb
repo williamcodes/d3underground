@@ -47,7 +47,7 @@ days = ["0101", "0102", "0103", "0104", "0105", "0106", "0107", "0108", "0109", 
 #   }
 # end
 
-years = ["1953"]
+years = ["1973", "1993", "2013", "1969", "1989"]
 
 years.each do |year|
   # city is hardcoded and needs to change in future to be variable
