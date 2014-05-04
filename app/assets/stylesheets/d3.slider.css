@@ -110,14 +110,14 @@ body {
     }
 
 /* Custom CSS Below */
+/********************/
 body{
   padding:0;
   margin:0;
+  width:100%;
 }
-#test-object{
-  background: #4682B4;
-  width: 200px;
-  height: 200px;
+div.logo-sm, .esriSimpleSlider.esriSimpleSliderVertical.esriSimpleSliderTL {
+  display: none !important;
 }
 .wrapper{
   width:100%;
@@ -127,6 +127,7 @@ body{
   position:fixed;
   bottom:0;
   margin:0;
+  z-index:99999999999999;
 }
 #day-slider-container{
   width:80%;
@@ -146,7 +147,42 @@ div#day-slider {
 }
 a.d3-slider-handle , .d3-slider-handle:hover{
   border-radius: 50px;
-  border: 2px solid red;
+  border: 2px solid black;
   box-shadow: 1px 1px 3px #C0C0C0;
+}
+#mapDiv, #mapDiv2{
+  width:50%;
+}
+.section-container{
+  width: 50%;
+  float: left;
+}
+#map-container{
+  width:100%;
+}
+#map-center{
+  width:80%;
+  margin:auto;
+}
+.map-div.map{
+  height:300px;
+}
+.input, h2{
+  text-align: center;
+}
+input {
+  font-size: 20px;
+  text-align: center;
+}
+div.overlay {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  z-index:9999;
+}
+.map{
+  position:relative;
 }
 
