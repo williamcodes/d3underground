@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "d3underground_development.year_weathers", "name" : "_id_" } ] }
