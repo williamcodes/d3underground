@@ -102,7 +102,7 @@
                     ,blue = 255-red
 
                     $(section + ' ' + map).css('fill', 'rgb(' + red + ',' + green + ',' + blue + ')');
-                    $(section + ' ' + map).css('background', 'rgb(' + red + ',' + green + ',' + blue + ')');
+                    // $(section + ' ' + map).css('background', 'rgb(' + red + ',' + green + ',' + blue + ')');
           }
 
           function setTempNumber (ytdNum, tempNum, section){
@@ -195,26 +195,21 @@
                          ,ytd2013 = yearlyWeather['2013']['temperatures'][value]['ytd'];
 
                     setTemp('path', temp1953, '#mapDivUpperLeft');
-                    //setTemp('div', ytd1953, '#mapDivUpperLeft .ytd');
                     setTempNumber(ytd1953, temp1953, '#mapDivUpperLeft' );
-
 
                     //setTemp('path', temp1969, '#mapDivUpperRight');
                     //setTemp('path', ytd1969, '#mapDivUpperRight .ytd div');
 
                     setTemp('path', temp1973, '#mapDivUpperRight');
-                    //setTemp('div', ytd1973, '#mapDivUpperRight .ytd');
                     setTempNumber(ytd1973, temp1973, '#mapDivUpperRight');
 
                     //setTemp('path', temp1989, '#mapDivUpperRight');
                     //setTemp('path', ytd1989, '#mapDivUpperRight .ytd div');
 
                     setTemp('path', temp1993, '#mapDivLowerLeft');
-                    //setTemp('div', ytd1993, '#mapDivLowerLeft .ytd');
                     setTempNumber(ytd1993, temp1993, '#mapDivLowerLeft');
 
                     setTemp('path', temp2013, '#mapDivLowerRight');
-                    //setTemp('div', ytd2013, '#mapDivLowerRight .ytd');
                     setTempNumber(ytd2013, temp2013, '#mapDivLowerRight');
 
                }).min(1).max(365)
