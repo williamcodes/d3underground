@@ -11,4 +11,8 @@ class MapsController < ApplicationController
 
   end
 
+  def about
+    
+  end
+
 end
